@@ -1,0 +1,43 @@
+<mjml>
+  <mj-head>
+    <mj-include path="./partials/_head-mail.mjml" />
+  </mj-head>
+  <mj-body mj-class="color-bg">
+    <mj-section mj-class="color-bg">
+      
+    </mj-section>
+    <mj-section background-color="#FFFFFF">
+      <mj-column width="100%">
+        <mj-text>
+          <img src="${imgPortal}" alt="${portalCreacionUsuario}" width="300" />
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#FFFFFF">
+      <mj-column width="100%">
+        <mj-text mj-class="texto-principal">
+          Hola ${nombreUsuario}, se ha creado una cuenta para el ${portalCreacionUsuario}. 
+          Si ya tienes una contraseña creada, debes utilizarla e ingresar directamente a ${urlPortal}. 
+          En caso contrario, sigue estos pasos para recuperarla y crear una nueva:
+        </mj-text>
+
+        <mj-text>
+          <p>1.	Dirígete a la siguiente URL: <a style="color: ${colorPortal}; text-decoration: underline" href="${urlPortal}">${urlPortal}</a>.</p>
+          
+          <p style="margin-top: 60px">2.	Haz clic en el botón “Recuperar Contraseña”.</p>
+          <img src="${imgPaso2}" alt="Paso 2 - Recuperar contraseña" width="280" />
+            
+          <p style="margin-top: 60px">3.	Ingresa tu RUT y haz click en el botón “Enviar”.</p>
+          <img src="${imgPaso3}" alt="Paso 3 - Ingresar RUT"  width="280" />
+
+          <p style="margin-top: 60px">4.	Recibirás un correo en un plazo máximo de 5 minutos; abre el correo y haz clic en el enlace que contiene.</p>
+
+          <p style="margin-top: 60px">5.	Crea una nueva contraseña (mínimo 8 caracteres).</p>
+          <img src="${imgPaso5}" alt="Paso 5 - Ingresa la nueva contraseña"  width="280" />
+
+          <p style="margin-top: 60px">6.	Inicia sesión en el portal, con tu RUT de usuario y contraseña creada recientemente.</p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

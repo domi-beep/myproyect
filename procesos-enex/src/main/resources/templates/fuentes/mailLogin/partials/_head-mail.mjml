@@ -1,0 +1,23 @@
+<mj-attributes>
+
+  <mj-all
+    font-family="Open Sans, Helvetica, Arial, sans-serif"
+    color="rgba(66, 66, 66, 1)"
+    font-size="12px"
+    align="center"
+    font-weight="500">
+  </mj-all>
+
+  <mj-class 
+    name="texto-principal"
+    font-size="14px"
+    color="rgb(44, 44, 44)"
+    line-height="24px">
+  </mj-class>
+
+  <mj-class 
+    name="color-bg" 
+    background-color="${colorPortal}">
+  </mj-class>
+
+</mj-attributes>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+   <Appenders>
+      <!-- Appender para la consola -->
+      <Console name="Console" target="SYSTEM_OUT">
+         <PatternLayout pattern="%style{%d{ISO8601}} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable" />
+      </Console>
+
+      <!-- Appender Rolling File general -->
+      <RollingFile name="RollingFile" fileName="./logs/service.log"
+                   filePattern="./logs/$${date:yyyy-MM}/service-%d{yyyy-MM-dd}-%i.log.zip">
+         <PatternLayout pattern="%d %-5p [%t] %C{1.} %m%n" />
+         <Policies>
+            <SizeBasedTriggeringPolicy size="20 MB" />
+            <TimeBasedTriggeringPolicy />
+         </Policies>
+      </RollingFile>
+
+      <!-- Appenders específicos para cada logger -->
+      <RollingFile name="SpecificLoggerAppender" fileName="./logs/%logger{1}.log"
+                   filePattern="./logs/$${date:yyyy-MM}/%logger{1}-%d{yyyy-MM-dd}-%i.log.zip">
+         <PatternLayout pattern="%d %-5p [%t] %C{1.} %m%n" />
+         <Policies>
+            <SizeBasedTriggeringPolicy size="20 MB" />
+            <TimeBasedTriggeringPolicy />
+         </Policies>
+      </RollingFile>
+   </Appenders>
+
+   <Loggers>
+   
+   <!-- Nivel TRACE para Spring Mail -->
+	    <logger name="org.springframework.mail" level="TRACE" />
+	    <logger name="org.springframework.mail.javamail" level="TRACE" />
+	    <logger name="javax.mail" level="TRACE" />
+   
+   
+      <!-- Loggers personalizados -->
+      <Logger name="ChangeCardStatusOrpakProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="VehicleCardOrpakProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="SendClientOrpakProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="ChangeClientOrpakProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="ChangeDepartmentStatusOrpakProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="SendCardBalanceOrpakProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="SendCardConstraintOrpakProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="SendDepartmentBalanceOrpakProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="SendCustomerBalanceOrpakProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="ChangeTypeBalance1ProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="ChangeTypeBalance2ProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="ChangeDepartmentStatusCondProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="CreateUpdateOTProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="LoadQuantityCardProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="ChangeTypeBalance1LitrosProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="ChangeTypeBalance2LitrosProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="ChangeDepartmentStatusCondLitrosProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="ChangeDepartmentCardStatusOrpakProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="DeleteDepartmentFleetOrpakProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="UpdateBalanceClientSCSProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="CargaDetalleFacturasSCEOrpakProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="CargaDetalleFacturasSCEOrpakProcessImplError" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="CargaClientesEPRProcessImpl" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+      <Logger name="CargaClientesEPRProcessImplError" level="debug" additivity="false">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="SpecificLoggerAppender" />
+      </Logger>
+
+      <!-- Logs de Hibernate -->
+      <Logger name="org.hibernate.SQL" level="debug">
+         <AppenderRef ref="Console" />
+      </Logger>
+
+      <!-- Logger global (Root) -->
+      <Root level="debug">
+         <AppenderRef ref="Console" />
+         <AppenderRef ref="RollingFile" />
+      </Root>
+   </Loggers>
+</Configuration>
